@@ -1,0 +1,11 @@
+package spell;
+public class Checker{
+	public Checker(){
+		System.out.println("Inside checker const");
+		
+		
+	}
+	public void SpellCheck() {
+		System.out.println("spell checking");
+	}
+}

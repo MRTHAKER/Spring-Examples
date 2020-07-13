@@ -1,0 +1,10 @@
+package spell;
+public class Checker{
+	Checker(){
+		
+		
+	}
+	public void SpellCheck() {
+		System.out.println("spell checking");
+	}
+}
