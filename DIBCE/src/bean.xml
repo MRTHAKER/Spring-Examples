@@ -1,0 +1,20 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <bean id ="Add" class="mst.Address">
+   <constructor-arg value="Dwarka"></constructor-arg>
+   <constructor-arg value="Gujarat"></constructor-arg>
+   <constructor-arg value="India"></constructor-arg>
+   </bean>
+<bean class="mst.Employee" id="Emp">
+<constructor-arg value="1"></constructor-arg>
+<constructor-arg value="Mahek Thaker"></constructor-arg>
+<constructor-arg ref="Add"></constructor-arg>
+
+
+</bean>
+</beans>
