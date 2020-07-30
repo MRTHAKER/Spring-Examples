@@ -1,0 +1,24 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <bean id ="bike1" class="travelerpack.Bike">
+   <constructor-arg value="Haysbusa"></constructor-arg>
+   <constructor-arg value="200" type="int"></constructor-arg>
+   </bean>
+   
+   <bean id ="car1" class="travelerpack.Car">
+   <constructor-arg value="maruti-800"></constructor-arg>
+   <constructor-arg value="90" type="int"></constructor-arg>
+   </bean>
+   
+<bean class="travelerpack.Traveler" id="tra">
+<constructor-arg ref="bike1"></constructor-arg>
+</bean>
+<bean class="travelerpack.Traveler" id="tra2">
+<constructor-arg ref="car1"></constructor-arg>
+</bean>
+</beans>
