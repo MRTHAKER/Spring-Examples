@@ -9,11 +9,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class Controllers {
-ArrayList<String> ar;
+ArrayList<BooksBean> ar;
 @RequestMapping("/login")
 public ModelAndView login(HttpServletRequest req) {
 	if(req.getParameter("name").equals("library")&& req.getParameter("pass").equals("1234")) {
-		ar=new ArrayList<String>();
+		ar=new ArrayList<BooksBean>();
 		return new ModelAndView("book");
 	}
 	else {
@@ -42,10 +42,18 @@ public ModelAndView AddBookBean(HttpServletRequest req) {
 		EBookAvailable=false;
 	}
 	b.setEBookAvailable(EBookAvailable);
+	ar.add(b);
 	return new ModelAndView("book");
+	
 }
 @RequestMapping("/DeleteBook")
 public ModelAndView DeleteBook(HttpServletRequest req) {
 	return new ModelAndView("AddBook");
+}
+@RequestMapping("/DisplayBooks")
+public void DisplayBooks(HttpServletRequest req) {
+	for(int i=0;i<ar.size();i++) {
+		ar.get(i).getBookName();
+	}
 }
 }
