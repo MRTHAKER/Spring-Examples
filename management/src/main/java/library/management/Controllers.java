@@ -23,7 +23,25 @@ public ModelAndView login(HttpServletRequest req) {
  }
 @RequestMapping("/AddBook")
 public ModelAndView AddBook(HttpServletRequest req) {
-	
+	return new ModelAndView("AddBook");
+}
+@RequestMapping("/AddBookBean")
+public ModelAndView AddBookBean(HttpServletRequest req) {
+	BooksBean b=new BooksBean();
+	boolean EBookAvailable;
+	b.setBookAuthorName(req.getParameter("BookAuthorName"));
+	b.setBookName(req.getParameter("BookName"));
+	b.setBookTitle(req.getParameter("BookTitle"));
+	b.setEdition(req.getParameter("Edition"));
+	b.setPublisherName(req.getParameter("PublisherName"));
+	b.setNumberOfCopies(Integer.parseInt(req.getParameter("NumberOfCopies")));
+	if((req.getParameter("EBookAvailable").equals("yes"))){
+		EBookAvailable=true;
+	}
+	else {
+		EBookAvailable=false;
+	}
+	b.setEBookAvailable(EBookAvailable);
 	return new ModelAndView("book");
 }
 @RequestMapping("/DeleteBook")
