@@ -8,5 +8,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class Controllers {
-
+@RequestMapping("/login")
+public ModelAndView login(HttpServletRequest req) {
+	if(req.getParameter("name").equals("library")&& req.getParameter("pass").equals("1234")) {
+		return new ModelAndView("Add_book");
+	}
+	else {
+		return new ModelAndView("Wrong");
+	}
+	
+}
 }
