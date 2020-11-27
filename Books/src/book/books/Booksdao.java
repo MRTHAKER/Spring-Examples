@@ -16,7 +16,7 @@ public class Booksdao {
 	}
 	
 	public List<Books> getAllBooksRowMapper(){  
-		 return jd.query("select Type from Books where Type='Ethnic",new RowMapper<Books>(){  
+		 return jd.query("select Type from Books where Type='Ethnic'",new RowMapper<Books>(){  
 		    @Override  
 		    public Books mapRow(ResultSet rs, int rownumber) throws SQLException {  
 		        Books b=new Books();  
@@ -28,6 +28,31 @@ public class Booksdao {
 		        b.setAvailableOn(rs.getNString(6));
 		        return b;  
 		    }  
-		    });  
+		    });
+	}
+		 
+		 public List<String> getAllAmazonBooksRowMapper(){  
+			 return jd.query("select Type from Books where AvailableOn='Amazon'",new RowMapper<String>(){  
+			    @Override  
+			    public String mapRow(ResultSet rs, int rownumber) throws SQLException {   
+			        return "ok";  
+			    }  
+			    });
+}
+		 public List<String> getAllMyntraBooksRowMapper(){  
+			 return jd.query("select Type from Books where AvailableOn='Myntra'",new RowMapper<String>(){  
+			    @Override  
+			    public String mapRow(ResultSet rs, int rownumber) throws SQLException {   
+			        return "ok";  
+			    }  
+			    });
+}
+		 public List<String> getAllAjioBooksRowMapper(){  
+			 return jd.query("select Type from Books where AvailableOn='Ajio'",new RowMapper<String>(){  
+			    @Override  
+			    public String mapRow(ResultSet rs, int rownumber) throws SQLException {   
+			        return "ok";  
+			    }  
+			    });
 }
 }

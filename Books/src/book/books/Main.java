@@ -43,5 +43,13 @@ public class Main {
 	    System.out.println(bb.getType());
 	    }
 	    
+	    List<String>AmazonList=bdao.getAllAmazonBooksRowMapper();
+	    System.out.println("Books Available on Amazon are: "+AmazonList.size());
+	    
+	    List<String>MyntraList=bdao.getAllMyntraBooksRowMapper();
+	    System.out.println("Books Available on Myntra are: "+MyntraList.size());
+	    
+	    List<String>AjioList=bdao.getAllAjioBooksRowMapper();
+	    System.out.println("Books Available on Ajio are: "+AjioList.size());
 }
 }
