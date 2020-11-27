@@ -7,7 +7,8 @@ public class Booksdao {
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jd = jdbcTemplate;
 	}
-	public int saveBook() {
-		return jd.update("");
+	public int saveBook(Books b) {
+		String query="insert into employee values('"+b.getBrand()+"','"+b.getType()+"','"+b.getForGender()+"','"+b.getPrice()+"','"+b.getSize()+"','"+b.getAvailableOn()+"')";
+		return jd.update(query);
 	}
 }
